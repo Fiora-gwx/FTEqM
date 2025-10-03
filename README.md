@@ -2,7 +2,7 @@
 <img src="eqm.png" width="700" height="700">
 This repo contains the official PyTorch implementation of Equilibrium Matching.
 
-> [**Equilibrium Matching: Generative Modeling with Implicit Energy-Based Models**](https://arxiv.org/abs/2506.09027)<br>
+> [**Equilibrium Matching: Generative Modeling with Implicit Energy-Based Models**](https://arxiv.org/abs/2510.02300)<br>
 > [Runqian Wang](https://raywang4.github.io/), [Yilun Du](https://yilundu.github.io/)
 > <br>MIT, Harvard<br>
 
