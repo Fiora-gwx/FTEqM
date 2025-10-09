@@ -1,4 +1,7 @@
 # Equilibrium Matching
+
+### [Paper](https://arxiv.org/abs/2510.02300) | [Project Page](https://raywang4.github.io/equilibrium_matching/)
+
 <img src="eqm.png" width="700" height="700">
 This repo contains the official PyTorch implementation of Equilibrium Matching.
 
