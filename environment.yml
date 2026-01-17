@@ -2,15 +2,16 @@ name: EqM
 channels:
   - pytorch
   - nvidia
+  - defaults
 dependencies:
-  - python >= 3.8
-  - pytorch >= 1.13
-  - torchvision
-  - pytorch-cuda >=11.7
+  - python=3.10
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - pytorch-cuda=12.1
   - pip
   - pip:
-    - timm
-    - diffusers
-    - accelerate
-    - torchdiffeq
-    - wandb
+      - timm
+      - diffusers
+      - accelerate
+      - torchdiffeq
+      - wandb

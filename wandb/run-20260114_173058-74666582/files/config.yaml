@@ -1,0 +1,137 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            asagf3g11eib1dozjrn91qfhvrjbxss8:
+                args:
+                    - --model
+                    - EqM-S/2
+                    - --data-path
+                    - /home/gwx/Imagenet/train
+                    - --global-batch-size
+                    - "256"
+                    - --disp
+                    - --wandb
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 64
+                cpu_count_logical: 128
+                cudaVersion: "12.2"
+                disk:
+                    /:
+                        total: "1966736678912"
+                        used: "1078179782656"
+                email: master.gwx@gmail.com
+                executable: /home/gwx/miniconda3/envs/EqM/bin/python3.10
+                git:
+                    commit: fe3b6897feb43f5af9624903c81ea5bcd41ee6bc
+                    remote: https://github.com/raywang4/EqM.git
+                gpu: NVIDIA GeForce RTX 4090
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "51527024640"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-483b664c-27f9-a51a-1bc5-8d4381d7b71b
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "51527024640"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-072f9497-5736-c8b8-b081-432b4d2f6b2f
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "51527024640"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-371e43b5-e1a4-e799-48ca-b7ba7bc0c8b5
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "51527024640"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-fce6e17e-0284-7482-fdac-26517137cffe
+                host: pgroup-Rack-Server
+                memory:
+                    total: "540651188224"
+                os: Linux-6.14.0-33-generic-x86_64-with-glibc2.39
+                program: /home/gwx/EqM/train.py
+                python: CPython 3.10.19
+                root: /home/gwx/EqM
+                startedAt: "2026-01-14T09:30:58.987215Z"
+                writerId: asagf3g11eib1dozjrn91qfhvrjbxss8
+        m: []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 49
+                - 53
+                - 63
+                - 71
+                - 83
+            "2":
+                - 1
+                - 5
+                - 41
+                - 49
+                - 53
+                - 63
+                - 71
+                - 83
+            "3":
+                - 13
+                - 14
+                - 16
+            "4": 3.10.19
+            "5": 0.23.0
+            "12": 0.23.0
+            "13": linux-x86_64
+cfg_scale:
+    value: 4
+ckpt:
+    value: null
+ckpt_every:
+    value: 50000
+data_path:
+    value: /home/gwx/Imagenet/train
+disp:
+    value: true
+ebm:
+    value: none
+epochs:
+    value: 80
+fts_alpha:
+    value: 0.5
+global_batch_size:
+    value: 256
+global_seed:
+    value: 0
+image_size:
+    value: 256
+log_every:
+    value: 100
+loss_weight:
+    value: null
+model:
+    value: EqM-S/2
+num_classes:
+    value: 1000
+num_workers:
+    value: 4
+path_type:
+    value: LINEAR
+prediction:
+    value: velocity
+results_dir:
+    value: results
+sample_eps:
+    value: null
+train_eps:
+    value: null
+uncond:
+    value: true
+vae:
+    value: ema
+wandb:
+    value: true

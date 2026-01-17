@@ -6,6 +6,8 @@ def create_transport(
     loss_weight=None,
     train_eps=None,
     sample_eps=None,
+    alpha=0.5,
+    lambda_val=None,
 ):
     """function for creating Transport object
     **Note**: model prediction defaults to velocity
@@ -37,6 +39,7 @@ def create_transport(
         "Linear": PathType.LINEAR,
         "GVP": PathType.GVP,
         "VP": PathType.VP,
+        "FTEqM": PathType.FTEQM,  # [2] 修改处：需要在字典里注册 FTS
     }
 
     path_type = path_choice[path_type]
@@ -44,10 +47,12 @@ def create_transport(
     if (path_type in [PathType.VP]):
         train_eps = 1e-5 if train_eps is None else train_eps
         sample_eps = 1e-3 if train_eps is None else sample_eps
-    elif (path_type in [PathType.GVP, PathType.LINEAR] and model_type != ModelType.VELOCITY):
+    # [3] 修改处：将 PathType.FTS 加入稳定性判断列表
+    # FTS 和 Linear 类似，如果预测目标不是 velocity，需要 epsilon 来避免除零
+    elif (path_type in [PathType.GVP, PathType.LINEAR, PathType.FTEQM] and model_type != ModelType.VELOCITY):
         train_eps = 1e-3 if train_eps is None else train_eps
         sample_eps = 1e-3 if train_eps is None else sample_eps
-    else: # velocity & [GVP, LINEAR] is stable everywhere
+    else: # velocity & [GVP, LINEAR, FTS] is stable everywhere
         train_eps = 0
         sample_eps = 0
     
@@ -58,6 +63,8 @@ def create_transport(
         loss_type=loss_type,
         train_eps=train_eps,
         sample_eps=sample_eps,
+        alpha=alpha,          # 传递
+        lambda_val=lambda_val # 传递
     )
     
     return state

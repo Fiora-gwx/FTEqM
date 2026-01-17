@@ -26,6 +26,7 @@ class PathType(enum.Enum):
     LINEAR = enum.auto()
     GVP = enum.auto()
     VP = enum.auto()
+    FTEQM = enum.auto()
 
 class WeightType(enum.Enum):
     """
@@ -35,6 +36,7 @@ class WeightType(enum.Enum):
     NONE = enum.auto()
     VELOCITY = enum.auto()
     LIKELIHOOD = enum.auto()
+
 
 
 class Transport:
@@ -47,18 +49,26 @@ class Transport:
         loss_type,
         train_eps,
         sample_eps,
+        alpha=0.8,        # 新增
+        lambda_val=None,  # 新增
     ):
         path_options = {
             PathType.LINEAR: path.ICPlan,
             PathType.GVP: path.GVPCPlan,
             PathType.VP: path.VPCPlan,
+            PathType.FTEQM: path.FTEqMPlan,
         }
 
         self.loss_type = loss_type
         self.model_type = model_type
-        self.path_sampler = path_options[path_type]()
+        # 实例化 Path Sampler
+        if path_type == PathType.FTEQM:
+            self.path_sampler = path_options[path_type](alpha=alpha, lambda_val=lambda_val)
+        else:
+            self.path_sampler = path_options[path_type]()
         self.train_eps = train_eps
         self.sample_eps = sample_eps
+        self.path_type = path_type
 
     def prior_logp(self, z):
         '''
@@ -142,7 +152,8 @@ class Transport:
         
         t, x0, x1 = self.sample(x1)
         t, xt, ut = self.path_sampler.plan(t, x0, x1)
-        ut = ut * self.get_ct(t)[:,None,None,None] # use energy-compatible target
+        if self.path_type != PathType.FTEQM:
+            ut = ut * self.get_ct(t)[:,None,None,None]
         model_output = model(xt, t, **model_kwargs)
         disp_loss = 0
 

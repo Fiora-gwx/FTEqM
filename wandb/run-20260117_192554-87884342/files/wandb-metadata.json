@@ -1,0 +1,75 @@
+{
+  "os": "Linux-6.14.0-33-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.19",
+  "startedAt": "2026-01-17T11:25:54.631106Z",
+  "args": [
+    "--model",
+    "EqM-S/2",
+    "--path-type",
+    "FTEqM",
+    "--alpha",
+    "0.8",
+    "--data-path",
+    "/home/gwx/Imagenet/train",
+    "--global-batch-size",
+    "256",
+    "--disp",
+    "--wandb"
+  ],
+  "program": "/home/gwx/EqM/train.py",
+  "codePath": "train.py",
+  "codePathLocal": "train.py",
+  "git": {
+    "remote": "https://github.com/raywang4/EqM.git",
+    "commit": "fe3b6897feb43f5af9624903c81ea5bcd41ee6bc"
+  },
+  "email": "master.gwx@gmail.com",
+  "root": "/home/gwx/EqM",
+  "host": "pgroup-Rack-Server",
+  "executable": "/home/gwx/miniconda3/envs/EqM/bin/python3.10",
+  "cpu_count": 64,
+  "cpu_count_logical": 128,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "1966736678912",
+      "used": "1111219732480"
+    }
+  },
+  "memory": {
+    "total": "540651188224"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "51527024640",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-483b664c-27f9-a51a-1bc5-8d4381d7b71b"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "51527024640",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-072f9497-5736-c8b8-b081-432b4d2f6b2f"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "51527024640",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-371e43b5-e1a4-e799-48ca-b7ba7bc0c8b5"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "51527024640",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-fce6e17e-0284-7482-fdac-26517137cffe"
+    }
+  ],
+  "cudaVersion": "12.2",
+  "writerId": "3slxsywsjdk5x11489ka7o2r4g70tyj5"
+}

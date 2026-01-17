@@ -1,0 +1,30 @@
+/home/gwx/miniconda3/envs/EqM/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py:202: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+[[34m2026-01-17 19:26:17[0m] EqM 参数量: 32,963,360
+[[34m2026-01-17 19:26:19[0m] 数据集包含 1,281,167 张图像 (/home/gwx/Imagenet/train)
+[[34m2026-01-17 19:26:19[0m] 训练 80 个 epoch...
+[[34m2026-01-17 19:26:19[0m] 开始 epoch 0...
+[[34m2026-01-17 19:27:15[0m] (step=0000100) 训练损失: 0.3375, 训练步数/秒: 1.77
+[[34m2026-01-17 19:28:10[0m] (step=0000200) 训练损失: -0.4389, 训练步数/秒: 1.83
+[[34m2026-01-17 19:29:04[0m] (step=0000300) 训练损失: -0.8488, 训练步数/秒: 1.83
+[[34m2026-01-17 19:29:59[0m] (step=0000400) 训练损失: -0.9438, 训练步数/秒: 1.83
+Traceback (most recent call last):
+  File "/home/gwx/EqM/train.py", line 437, in <module>
+    main(args)
+  File "/home/gwx/EqM/train.py", line 334, in main
+    loss_dict = transport.training_losses(model, x, model_kwargs)
+  File "/home/gwx/EqM/transport/transport.py", line 153, in training_losses
+    t, x0, x1 = self.sample(x1)
+  File "/home/gwx/EqM/transport/transport.py", line 123, in sample
+    t = t.to(x1)
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/gwx/EqM/train.py", line 437, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/gwx/EqM/train.py", line 334, in main
+[rank0]:     loss_dict = transport.training_losses(model, x, model_kwargs)
+[rank0]:   File "/home/gwx/EqM/transport/transport.py", line 153, in training_losses
+[rank0]:     t, x0, x1 = self.sample(x1)
+[rank0]:   File "/home/gwx/EqM/transport/transport.py", line 123, in sample
+[rank0]:     t = t.to(x1)
+[rank0]: KeyboardInterrupt

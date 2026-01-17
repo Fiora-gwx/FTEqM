@@ -1,0 +1,23 @@
+2026-01-17 19:25:54,631 INFO    MainThread:3660858 [wandb_setup.py:_flush():80] Current SDK version is 0.23.0
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_setup.py:_flush():80] Configure stats pid to 3660858
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_setup.py:_flush():80] Loading settings from /home/gwx/.config/wandb/settings
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_setup.py:_flush():80] Loading settings from /home/gwx/EqM/wandb/settings
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_init.py:setup_run_log_directory():713] Logging user logs to /home/gwx/EqM/wandb/run-20260117_192554-87884342/logs/debug.log
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_init.py:setup_run_log_directory():714] Logging internal logs to /home/gwx/EqM/wandb/run-20260117_192554-87884342/logs/debug-internal.log
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_init.py:init():840] calling init triggers
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_init.py:init():845] wandb.init called with sweep_config: {}
+config: {'data_path': '/home/gwx/Imagenet/train', 'results_dir': 'results', 'model': 'EqM-S/2', 'image_size': 256, 'num_classes': 1000, 'epochs': 80, 'global_batch_size': 256, 'global_seed': 0, 'vae': 'ema', 'num_workers': 4, 'log_every': 100, 'ckpt_every': 50000, 'cfg_scale': 4.0, 'wandb': True, 'ckpt': None, 'disp': True, 'uncond': True, 'ebm': 'none', 'fts_alpha': 0.5, 'path_type': 'FTEqM', 'prediction': 'velocity', 'loss_weight': None, 'sample_eps': None, 'train_eps': None, 'alpha': 0.8, 'lambda_val': None, '_wandb': {}}
+2026-01-17 19:25:54,632 INFO    MainThread:3660858 [wandb_init.py:init():888] starting backend
+2026-01-17 19:25:54,879 INFO    MainThread:3660858 [wandb_init.py:init():891] sending inform_init request
+2026-01-17 19:25:54,882 INFO    MainThread:3660858 [wandb_init.py:init():899] backend started and connected
+2026-01-17 19:25:54,883 INFO    MainThread:3660858 [wandb_init.py:init():969] updated telemetry
+2026-01-17 19:25:54,887 INFO    MainThread:3660858 [wandb_init.py:init():993] communicating run to backend with 90.0 second timeout
+2026-01-17 19:25:56,181 INFO    MainThread:3660858 [wandb_init.py:init():1040] starting run threads in backend
+2026-01-17 19:25:56,234 INFO    MainThread:3660858 [wandb_run.py:_console_start():2504] atexit reg
+2026-01-17 19:25:56,234 INFO    MainThread:3660858 [wandb_run.py:_redirect():2352] redirect: wrap_raw
+2026-01-17 19:25:56,234 INFO    MainThread:3660858 [wandb_run.py:_redirect():2421] Wrapping output streams.
+2026-01-17 19:25:56,234 INFO    MainThread:3660858 [wandb_run.py:_redirect():2444] Redirects installed.
+2026-01-17 19:25:56,236 INFO    MainThread:3660858 [wandb_init.py:init():1080] run started, returning control to user process
+2026-01-17 19:30:19,616 INFO    wandb-AsyncioManager-main:3660858 [service_client.py:_forward_responses():80] Reached EOF.
+2026-01-17 19:30:19,616 INFO    wandb-AsyncioManager-main:3660858 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

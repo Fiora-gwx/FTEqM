@@ -190,3 +190,41 @@ class GVPCPlan(ICPlan):
     def compute_d_alpha_alpha_ratio_t(self, t):
         """Special purposed function for computing numerical stabled d_alpha_t / alpha_t"""
         return np.pi / (2 * th.tan(t * np.pi / 2))
+
+
+
+class FTEqMPlan(ICPlan):
+    """
+    Finite-Time Equilibrium Matching Plan based on Constructive Lyapunov Design.
+    Dynamics: dz/dtau = (x - epsilon) * c(gamma)
+    """
+    def __init__(self, sigma=0.0, alpha=0.8, lambda_val=None):
+        super().__init__(sigma)
+        self.alpha = alpha
+        # 如果未指定 lambda，默认设为 2*alpha 以保证 integral(c) ≈ 1 (使得 z(1) ≈ x)
+        # c(gamma) = lambda * (1-gamma)^(2*alpha - 1)
+        # integral_0^1 c(gamma) = lambda / (2*alpha)
+        self.lambda_val = lambda_val if lambda_val is not None else (2 * self.alpha)
+
+    def get_c_gamma(self, t):
+        """
+        Compute the scheduling function c(gamma).
+        Formula: c(gamma) = lambda * (1 - gamma)^(2*alpha - 1)
+        """
+        # t is gamma in [0, 1]
+        # 2*alpha - 1 > 0 for alpha > 0.5 (Soft landing)
+        exponent = 2 * self.alpha - 1
+        # Clamp 1-t to avoid numerical issues at t=1, though theoretically it's 0
+        base = (1 - t).clamp(min=1e-6) 
+        return self.lambda_val * base.pow(exponent)
+
+    def compute_ut(self, t, x0, x1, xt):
+        """
+        Compute the target vector field.
+        u_t = (x1 - x0) * c(t)
+        """
+        t = expand_t_like_x(t, x1)
+        c_t = self.get_c_gamma(t)
+        # Linear geometric path direction is (x1 - x0)
+        # Time-rescaled velocity is direction * c(t)
+        return (x1 - x0) * c_t

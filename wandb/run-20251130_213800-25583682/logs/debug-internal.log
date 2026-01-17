@@ -1,0 +1,17 @@
+{"time":"2025-11-30T21:38:00.691002719+08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2025-11-30T21:38:01.219686375+08:00","level":"INFO","msg":"stream: created new stream","id":"25583682"}
+{"time":"2025-11-30T21:38:01.219799923+08:00","level":"INFO","msg":"handler: started","stream_id":"25583682"}
+{"time":"2025-11-30T21:38:01.22000649+08:00","level":"INFO","msg":"stream: started","id":"25583682"}
+{"time":"2025-11-30T21:38:01.220035747+08:00","level":"INFO","msg":"writer: started","stream_id":"25583682"}
+{"time":"2025-11-30T21:38:01.220046138+08:00","level":"INFO","msg":"sender: started","stream_id":"25583682"}
+{"time":"2025-11-30T22:41:21.081174448+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/master-gwx-zhejiang-university/EqM/25583682/file_stream\": EOF"}
+{"time":"2025-11-30T22:43:48.861376636+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/master-gwx-zhejiang-university/EqM/25583682/file_stream\": EOF"}
+{"time":"2025-11-30T22:53:19.045120642+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/master-gwx-zhejiang-university/EqM/25583682/file_stream\": EOF"}
+{"time":"2025-12-01T08:27:47.746911342+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/master-gwx-zhejiang-university/EqM/25583682/file_stream\": EOF"}
+{"time":"2025-12-01T10:32:01.96121554+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/master-gwx-zhejiang-university/EqM/25583682/file_stream\": EOF"}
+{"time":"2025-12-02T03:38:33.244075058+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-12-02T19:46:30.457398057+08:00","level":"INFO","msg":"stream: closing","id":"25583682"}
+{"time":"2025-12-02T19:46:32.015337665+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-02T19:46:32.649716263+08:00","level":"INFO","msg":"handler: closed","stream_id":"25583682"}
+{"time":"2025-12-02T19:46:32.649860273+08:00","level":"INFO","msg":"sender: closed","stream_id":"25583682"}
+{"time":"2025-12-02T19:46:32.649871851+08:00","level":"INFO","msg":"stream: closed","id":"25583682"}

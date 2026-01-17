@@ -5,12 +5,15 @@ def none_or_str(value):
 
 def parse_transport_args(parser):
     group = parser.add_argument_group("Transport arguments")
-    group.add_argument("--path-type", type=str, default="Linear", choices=["Linear", "GVP", "VP"])
+    parser.add_argument("--path-type", type=str, default="Linear", 
+                        choices=["Linear", "GVP", "VP", "FTEqM"], # <--- 添加 FTS
+                        help="Interpolation path type")
     group.add_argument("--prediction", type=str, default="velocity", choices=["velocity", "score", "noise"])
     group.add_argument("--loss-weight", type=none_or_str, default=None, choices=[None, "velocity", "likelihood"])
     group.add_argument("--sample-eps", type=float)
     group.add_argument("--train-eps", type=float)
-
+    group.add_argument("--alpha", type=float, default=0.8, help="Lyapunov exponent alpha for FT-EqM (0.5 < alpha < 1)")
+    group.add_argument("--lambda-val", type=float, default=None, help="Global scheduling constant lambda for FT-EqM")
 
 def parse_ode_args(parser):
     group = parser.add_argument_group("ODE arguments")

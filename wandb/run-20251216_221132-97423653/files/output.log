@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/home/gwx/EqM/train.py", line 436, in <module>
+    main(args)
+  File "/home/gwx/EqM/train.py", line 243, in main
+    transport = create_transport(
+  File "/home/gwx/EqM/transport/__init__.py", line 41, in create_transport
+    "FTS": PathType.FTS,  # [2] 修改处：需要在字典里注册 FTS
+  File "/home/gwx/miniconda3/envs/EqM/lib/python3.10/enum.py", line 437, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: FTS
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/gwx/EqM/train.py", line 436, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/gwx/EqM/train.py", line 243, in main
+[rank0]:     transport = create_transport(
+[rank0]:   File "/home/gwx/EqM/transport/__init__.py", line 41, in create_transport
+[rank0]:     "FTS": PathType.FTS,  # [2] 修改处：需要在字典里注册 FTS
+[rank0]:   File "/home/gwx/miniconda3/envs/EqM/lib/python3.10/enum.py", line 437, in __getattr__
+[rank0]:     raise AttributeError(name) from None
+[rank0]: AttributeError: FTS
